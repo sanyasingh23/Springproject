@@ -30,12 +30,13 @@ ul {
 body {
   font-family: Garamond;
   padding: 10px;
+  margin: 40px;
   background: #f1f1f1;
 }
 .header {
   padding: 30px;
   text-align: center;
-  background: white;
+  background: lightgreen;
 }
 .header h1 {
   font-size: 50px;
@@ -133,7 +134,7 @@ li a:hover {
   font-size:23px;
   display:block;
   overflow:hidden;
-  padding: 6px 16px;
+  padding: 6px 14px;
   text-decoration:none;
   color:white;
   background-color:#000;
@@ -193,7 +194,8 @@ e.printStackTrace();
 }
 
 Connection connection = null;
-PreparedStatement ps = null;int blogid = Integer.parseInt(bno);
+PreparedStatement ps = null;
+int blogid = Integer.parseInt(bno);
 %>
 <%
 try{ 
@@ -212,8 +214,14 @@ e.printStackTrace();
 %>
 <div class="rightcolumn">
 <div class="card">
-      <h3>Follow Me</h3>
-      <p>Some text..</p>
+      <h3>Sanya Singh</h3>
+      <p>follow me on:<br><br>
+      <a href="https://www.instagram.com/singhsanya_/"><img src="\images\insta.jpg" height="40"></a>
+    <a href="https://www.linkedin.com/in/sanya-singh-94222816a/"><img src="\images\linkedin.jpg" height="40"></a>
+   <a href="https://www.pinterest.com/singhsanya2302/boards/"> <img src="\images\pinterest.jpg" height="40"></a>
+   <a href="https://twitter.com/singhsanya2302"> <img src="\images\twitter.jpg" height="40"> </a>     
+   <a href="mailto:sanyasingh23@outlook.com"> <img src="\images\email.jpg" height="40"></a></article></section>
+      </p>
     </div>
 </div>
 <form  method="post" action="/add" style="text-align:center">

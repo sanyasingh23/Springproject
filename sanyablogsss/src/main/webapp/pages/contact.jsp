@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Sanya Singh - Home</title>
+<title>Sanya Singh - CONTACT</title>
 <meta charset="ISO-8859-1">
 <style>
 * {
@@ -11,11 +11,12 @@
 }
 body {
   font-family: Garamond;
+  margin: 40px;
 }
 article {
-  background-color: #000;
+  background-color: white;
   padding: 40px;
-  color: white;
+  color: #333333;
   }
 footer {
   background-color: #777;
@@ -66,14 +67,14 @@ li .button:hover {
 }
 article a{
   text-decoration: none;
-  color: white;
+  color: #333333;
 }
 </style>
 </head>
 <body>
 <ul>
   <li><a href="/pages/home.jsp">Home</a></li>
-  <li><a href="/pages/showblogs.jsp">Blog</a></li>
+  <li><a href="/pages/blog.jsp">Blog</a></li>
   <li><a href="/pages/contact.jsp">Contact</a></li>
 </ul>
 

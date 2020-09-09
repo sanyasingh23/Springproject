@@ -38,27 +38,10 @@ public class WebsiteController {
 	public String addBlog() {
 		return "addblog";
 	}
-	@PostMapping("/login")
-	public String logBlog() {
-		return "loginpage";
-	}
-	@PostMapping("/signin")
-	public String loginblog(@RequestParam String username, @RequestParam String password) {
-		if(username == "sanyasingh23")
-	return "showblogs";	
-		else return "wrongpage";
-	}
+	
 	@PostMapping("/delete")
 	public String deleteBlog() {
 		return "deleteblog";
-	}
-	@PostMapping("/sign")
-	public String signBlog() {
-		return "showblogs";
-	}
-	@PostMapping("/signfail")
-	public String signfailBlog() {
-		return "wrongpage";
 	}
 	
 	@PostMapping("/added")
@@ -66,10 +49,10 @@ public class WebsiteController {
 		Blogs b = new Blogs();
 		b.setBtitle(btitle);
 		b.setBdesc(bdesc);
-		
 		repo.save(b);
 		return "showblogs";
 	}
+	
 	
 	@PostMapping("/deleted")
 	public String deleted(@RequestParam int bno) {
@@ -81,5 +64,6 @@ public class WebsiteController {
 	public String updateBlog() {
 		return "updateblog";
 	}
+	
 
 }

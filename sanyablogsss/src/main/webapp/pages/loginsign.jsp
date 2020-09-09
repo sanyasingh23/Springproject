@@ -11,6 +11,28 @@
 <head>
 <meta charset="ISO-8859-1">
 <style>
+.btn{
+  display: block;
+  background-color:white;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  padding: 16px;
+  text-decoration: none;
+  font-family: Garamond;
+  font-weight: bold;
+}
+.btn:hover{
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+footer {
+  background-color: #777;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
 * {
   box-sizing: border-box;
 }
@@ -26,9 +48,9 @@ ul {
   background-color: #333333;
 }
 body {
-margin: 40px;
   font-family: Garamond;
   padding: 10px;
+  margin: 40px;
   background: #f1f1f1;
 }
 .header {
@@ -143,7 +165,7 @@ li a:hover {
   font-size:23px;
   display:block;
   overflow:hidden;
-  padding: 6px 14px;
+  padding: 6px 10px;
   text-decoration:none;
   color:white;
   background-color:#000;
@@ -175,12 +197,44 @@ li a:hover {
   border: 1px solid black;
 }
 </style>
-
-<title>Blog - showblogs</title>
+<title>WELCOME</title>
 </head>
 <body>
+
+
+<%
+String username1=request.getParameter("username");
+String password1=request.getParameter("password");
+String driverName = "com.mysql.cj.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String dbName = "sanya";
+String userId = "sanyablog";
+String password = "sanyablog";
+String dbuser;
+String dbpass;
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
+
+<%
+try{ 
+connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
+statement=connection.createStatement();
+String sql ="SELECT * FROM logincred";
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+	dbuser = resultSet.getString("username");
+	dbpass = resultSet.getString("password");
+	if(username1.equals(dbuser)&&password1.equals(dbpass)){
+%>
 <div class="header">
-  <h1>sanyasingh.com</h1>
+  <h1>WELCOME <%= resultSet.getString("username")%></h1>
  </div>
 <ul>
   <li><a href="/pages/home.jsp">Home</a></li>
@@ -188,29 +242,24 @@ li a:hover {
   <li><a href="/pages/contact.jsp">Contact</a></li>
 </ul>
 <br>
-
 <%
-
 String driverNamee = "com.mysql.cj.jdbc.Driver";
 String connectionUrle = "jdbc:mysql://localhost:3306/";
 String dbNamee = "sanya";
 String userIde = "sanyablog";
 String passworde = "sanyablog";
-
 try {
 Class.forName(driverNamee);
 } catch (ClassNotFoundException e) {
 e.printStackTrace();
 }
-
 Connection connectione = null;
 Statement statemente = null;
 ResultSet resultSete = null;
-%>
+%> 
 <div class="rightcolumn">
 <div class="cardd">
-     
-    </div>
+</div>
 </div>
 <form  method="post" action="/add" style="text-align:center">
 <input type="submit" name="Show all Blogs" class="btn right" value="New blog">
@@ -222,7 +271,6 @@ ResultSet resultSete = null;
 <div class="row">
 <div class="leftcolumn">
 <table id="mytable">
-
 <%
 try{ 
 connectione = DriverManager.getConnection(connectionUrle+dbNamee, userIde, passworde);
@@ -236,20 +284,49 @@ while(resultSete.next()){
       <td class="cardddd"><a style="font-size:40px;text-decoration:none;color:black;"><%=resultSete.getString("btitle") %></a></td>
       <td class="card"><a class="butn" href="/pages/viewblog.jsp?bno=<%=resultSete.getInt("bno")%>">View</a></td>
       <td class="card"><a class="butn" href="/pages/update.jsp?bno=<%=resultSete.getInt("bno")%>">Edit</a></td>
-      <td class="card"><a class="butn" href="/pages/deleteblog.jsp?bno=<%=resultSete.getInt("bno")%>">Delete</a></td> 
-  </tr>
+      <td class="card"><a class="butn" href="/pages/deleteblog.jsp?bno=<%=resultSete.getInt("bno")%>">Delete</a></td> </tr>
  
-
 <%
 }
 }catch (Exception e) {
 e.printStackTrace();
 }
 %>
-
 </table>
 </div>
 </div>
+<%
+}
+	else{
+		%>
+<div class="header">
+  <h1>sanyasingh.com</h1>
+ </div>
+<ul>
+  <li><a href="/pages/home.jsp">Home</a></li>
+  <li><a href="/pages/showblogs.jsp">Blog</a></li>
+  <li><a href="/pages/contact.jsp">Contact</a></li>
+</ul>
+<br>
+<h1>WRONG LOGIN CREDENTIALS%></h1>
+ <form  method="post" action="loginpage.jsp" style="text-align:center">
+ <input style="border-bottom:none;" type="submit" class="btn" value="Go to login page">
+ </form>
+ <form  method="post" action="blog.jsp" style="text-align:center">
+ <input style="border-bottom:none;" type="submit" class="btn" value="Go to blogs">
+ </form>
+		<%
+	}
+}
+}
+catch (Exception e) {
+e.printStackTrace();
+}
+%>
+<br>
+<footer>
+  <p>Copyright © 2020 Sanya Singh. All Rights Reserved</p>
+</footer>
 <script>
 function myFunction() {
   var input, filter, table, tr, i, txtValue, td;
@@ -270,5 +347,3 @@ function myFunction() {
   }
 }
 </script>
-</body>
-</html>

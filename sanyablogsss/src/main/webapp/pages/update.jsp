@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Blog-showblogs-edit</title>
+<title>Blog-edit</title>
 <style>
 * {
   box-sizing: border-box;
@@ -19,6 +19,7 @@
 body {
   font-family: Garamond;
   padding: 10px;
+  margin: 40px;
   text-align: center;
   background: #f1f1f1;
 }

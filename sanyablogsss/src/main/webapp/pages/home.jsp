@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Sanya Singh - Home</title>
+<title>Sanya Singh</title>
 <meta charset="ISO-8859-1">
 <style>
 * {
@@ -11,10 +11,12 @@
 }
 body {
   font-family: Garamond;
+  margin: 40px;
+  
 }
 article {
   background-color: white;
-  padding: 40px;
+  padding: 30px;
 }
 .article{
 background-color:#f1f1f1;
@@ -49,6 +51,7 @@ li a {
 }
 img{
   float: right;
+  margin-right: 50px;
 }
 li a:hover {
   background-color: #111111;
@@ -81,18 +84,18 @@ article img{
 <body>
 <ul>
   <li><a href="/pages/home.jsp">Home</a></li>
-  <li><a href="/pages/showblogs.jsp">Blog</a></li>
+  <li><a href="/pages/blog.jsp">Blog</a></li>
   <li><a href="/pages/contact.jsp">Contact</a></li>
 </ul>
 <img src="\images\sanya.png" height="210">
-<section><article><h1 style="margin-left:20px;font-size:30px;">Sanya Singh</h1><p style="font-size:20px">
+<section><article><h1 style="margin-left:0px;font-size:30px;">Sanya Singh</h1><p style="margin-right:50px;font-size:20px">
 My name is Sanya, and I am currently a job seeker. I have a keen interest in full stack development using Spring, Java, HTML and CSS. I am currently pusuing Bachelors in Computer Science Engineering from Mody University of Science and Technology, Lakshmangarh, Rajasthan. I am from Vadodara, Gujarat. My hobbies include calligraphy, singing, playing badminton and sketching.</p>
-<a href="https://www.instagram.com/sanyasingh_23/"><img src="\images\insta.jpg" style="float:left;" height="40"></a>
+<a href="https://www.instagram.com/singhsanya_/"><img src="\images\insta.jpg" style="float:left;" height="40"></a>
     <a href="https://www.linkedin.com/in/sanya-singh-94222816a/"><img src="\images\linkedin.jpg" style="float:left;" height="40"></a>
    <a href="https://www.pinterest.com/singhsanya2302/boards/"> <img src="\images\pinterest.jpg" style="float:left;" height="40"></a>
    <a href="https://twitter.com/singhsanya2302"> <img src="\images\twitter.jpg" style="float:left;" height="40"> </a>     
    <a href="mailto:sanyasingh23@outlook.com"> <img src="\images\email.jpg" style="float:left;" height="40"></a></article></section>
-
+<br>
     <ul>
       <li><button class="button" onclick="openPro('Education')">Education</button></li>
       <li><button class="button" onclick="openPro('Interests')">Interests</button></li>

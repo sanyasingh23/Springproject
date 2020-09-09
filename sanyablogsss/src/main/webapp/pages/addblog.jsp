@@ -18,6 +18,7 @@ ul {
 body {
   font-family: Garamond;
   padding: 10px;
+  margin: 40px;
   background: #cccccc;
 }
 .header {

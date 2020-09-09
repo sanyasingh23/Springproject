@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Sanya Singh</title>
+<title>LOGIN PAGE</title>
 <meta charset="ISO-8859-1">
 <style>
 * {
@@ -11,7 +11,7 @@
 }
 body {
   font-family: Garamond;
-}
+margin: 40px;}
 article {
   background-color: white;
   padding: 20px;
@@ -67,6 +67,7 @@ li .button:hover {
 }
 article a{
   text-decoration: none;
+  text-align: center;
   color: white;
 }
 .btn{
@@ -97,31 +98,23 @@ width:50%;
 <body>
 <ul>
   <li><a href="/pages/home.jsp">Home</a></li>
-  <li><a href="/pages/showblogs.jsp">Blog</a></li>
+  <li><a href="/pages/blog.jsp">Blog</a></li>
   <li><a href="/pages/contact.jsp">Contact</a></li>
 </ul>
 
  <article>
     
   <h2>LOGIN PAGE</h2>
- <!-- <form method="post" action="/signin" id="form">-->
+ 
+ <form method="post" action="loginsign.jsp" >
    <h3><em> Enter Username: </em></h3>&emsp;
-<input type="text" name="username"><br><br>
+<input type="text" name="username"><br>
   <h3><em> Enter Password: </em></h3>&emsp;
-<input type="password" name="password"><br><br>
-<%  String username = request.getParameter("username");  
-String password = request.getParameter("password");  
-if (username == "sanyasingh23" && password == "savya1823" ){ %>
-<form method="post" action="/sign" id="form">
- <input type="submit" class="btn" value="Sign In">
- <%
- }
-else{%>
-<form method="post" action="/signfail" id="form">
- <input type="submit" class="btn" value="Sign In Fail">
- <%
- } %>
-</form>-->
+<input type="password" name="password"><br>
+
+ <input style="border-bottom:none;" type="submit" class="btn" value="Sign In">
+ 
+</form>
 </article>
 <br>
 <footer>

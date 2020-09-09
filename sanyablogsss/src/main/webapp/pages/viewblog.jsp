@@ -11,15 +11,30 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Blog-showblog-open</title>
+<title>Blog View</title>
 <style>
 <style>
 * {
   box-sizing: border-box;
 }
+footer {
+  background-color: #777;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.header {
+  padding: 30px;
+  text-align: center;
+  background: lightgreen;
+}
+.header h1 {
+  font-size: 40px;
+}
 body {
   font-family: Garamond;
   padding: 10px;
+  margin: 40px;
   background: #f1f1f1;
 }
 article {
@@ -57,7 +72,9 @@ String sql ="SELECT * FROM blogs where bno="+bno;
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()) {
 %>
-<h1 style="text-align:center"><%=resultSet.getString("btitle") %></h1><br>
+<div class="header">
+  
+<h1><%=resultSet.getString("btitle") %></h1></div><br>
 <article>
       
   <p style="font-size:20px;text-align:center;padding-left:40px;padding-right:40px;"><%=resultSet.getString("bdesc") %></p>
@@ -70,5 +87,8 @@ catch (Exception e) {
 e.printStackTrace();
 }
 %>
+<footer>
+  <p>Copyright © 2020 Sanya Singh. All Rights Reserved</p>
+</footer>
 </body>
 </html>
